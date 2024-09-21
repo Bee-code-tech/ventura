@@ -1,0 +1,9 @@
+Home page
+1. connect wallet
+2. display available events
+3. register for an events
+4. conditionally display buttons for logged in users
+
+Event page
+1. get list of events (registered)
+2. cancel registration of events
