@@ -6,6 +6,12 @@ import { ThirdwebProvider } from '@thirdweb-dev/react';
 import App from './App';
 import 'ethers/lib/utils';
 import './index.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { WagmiProvider } from 'wagmi'
+import { config } from './config'
+
+const queryClient = new QueryClient()
+
 
 // Arbitrum Sepolia Testnet configuration
 const activeChain = {
@@ -23,7 +29,13 @@ const activeChain = {
 // eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <ThirdwebProvider activeChain={activeChain}>
+     <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        {/** ... */}
+     
     <App />
+     </QueryClientProvider>
+    </WagmiProvider>
   </ThirdwebProvider>,
   document.getElementById('root')
 );
