@@ -1,6 +1,6 @@
 // EventCard.js
-import React from 'react';
 
+// eslint-disable-next-line react/prop-types
 const EventCard = ({ title, image, startDate, endDate, price }) => {
   return (
     <div className="w-[400px] rounded-lg overflow-hidden shadow-lg bg-white">
