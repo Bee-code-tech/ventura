@@ -1,17 +1,21 @@
 import  { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa6';
+import { deployedContracts } from '../contract/deployedContract';
+import { useWriteContract } from 'wagmi'
 
 // eslint-disable-next-line react/prop-types
 const EventModal = ({ isOpen, onClose, addEvent }) => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
-  const [startTime, setStartTime] = useState('');
+  const [startTime, setStartTime] = useState(Date.now());
   const [description, setDescription] = useState('');
   const [endTime, setEndTime] = useState('');
   const [price, setPrice] = useState('');
+  const [venue, setVenue] = useState('');
+  const {writeContractAsync} = useWriteContract()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     
     // Create the new event object
@@ -22,10 +26,18 @@ const EventModal = ({ isOpen, onClose, addEvent }) => {
       description,
       startTime,
       endTime,
+      venue,
       price,
     };
 
     // Add the event to the list
+    writeContractAsync({
+        address: deployedContracts.contract1.address,
+        abi: deployedContracts.contract1.abi,
+        functionName: "createEvent",
+        args: [newEvent.title, newEvent.description, newEvent.venue, ["1234564678"], newEvent.startTime, 1],
+        chainId: 421614, // Arbitrum Sepolia Testnet chainId
+    })
     addEvent(newEvent);
 
     // Close the modal

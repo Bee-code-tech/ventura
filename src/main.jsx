@@ -8,8 +8,7 @@ import 'ethers/lib/utils';
 import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider } from 'wagmi'
-import { config } from './config'
-
+import {wagmiConfig} from "./config/wagmi"
 const queryClient = new QueryClient()
 
 
@@ -29,7 +28,7 @@ const activeChain = {
 // eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <ThirdwebProvider activeChain={activeChain}>
-     <WagmiProvider config={config}>
+     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         {/** ... */}
      

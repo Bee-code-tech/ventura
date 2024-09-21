@@ -1,5 +1,6 @@
-export const deploedContracts = {
-    address: "0xA658Fa34515794c1C38D5Beb7D412E11d50A141C",
+export const deployedContracts = {
+    "contract1": {
+        address: "0xA658Fa34515794c1C38D5Beb7D412E11d50A141C",
     abi: [
 	{
 		"inputs": [
@@ -413,4 +414,5 @@ export const deploedContracts = {
 		"type": "function"
 	}
 ]
+    }
 }
