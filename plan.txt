@@ -7,3 +7,14 @@ Home page
 Event page
 1. get list of events (registered)
 2. cancel registration of events
+
+
+
+title
+description
+image
+price
+venue
+date
+start time
+end time

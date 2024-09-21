@@ -1,7 +1,8 @@
-import { CiGlobe } from "react-icons/ci"
-import { FaPlus } from "react-icons/fa"
+import { CiGlobe } from "react-icons/ci";
+import { FaPlus } from "react-icons/fa";
 
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ onCreateEventClick }) => {
   return (
     <div className='w-full flex items-center justify-between px-4 mt-4'>
       <div className="flex items-center">
@@ -13,18 +14,20 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex gap-2 items-center justify-center">
-        
         <div className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2">
             <CiGlobe className="text-xl"/>
             Connect wallet
         </div>
-        <div className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2">
+        <div 
+          className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2 cursor-pointer"
+          onClick={onCreateEventClick}
+        >
             <FaPlus className="text-xl"/>
             Create Event
         </div>
       </div>
     </div>
   )
-}
+};
 
-export default Navbar
+export default Navbar;
