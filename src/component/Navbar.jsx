@@ -1,12 +1,8 @@
-import { useAddress, useMetamask, useDisconnect } from '@thirdweb-dev/react';
-import { CiGlobe } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ onCreateEventClick }) => {
-  const address = useAddress(); // Hook to get the connected wallet address
-  const connectWithMetamask = useMetamask(); // Hook to connect with MetaMask
-  const disconnectWallet = useDisconnect(); // Hook to disconnect the wallet
 
   return (
     <div className='w-full flex items-center justify-between px-4 mt-4'>
@@ -18,23 +14,7 @@ const Navbar = ({ onCreateEventClick }) => {
       </div>
       <div className="flex gap-2 items-center justify-center">
         {/* If wallet is connected, show the address */}
-        {address ? (
-          <div 
-            className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2 cursor-pointer"
-            onClick={disconnectWallet} // Clicking will disconnect the wallet
-          >
-            {address.substring(0, 6)}...{address.slice(-4)} {/* Shortened Wallet Address */}
-            <span className="text-red-500 ml-2">(Disconnect)</span>
-          </div>
-        ) : (
-          <div 
-            className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2 cursor-pointer"
-            onClick={connectWithMetamask} // Clicking will connect the wallet
-          >
-            <CiGlobe className="text-xl" />
-            Connect Wallet
-          </div>
-        )}
+       <ConnectButton  />
 
         {/* Create Event Button */}
         <div 

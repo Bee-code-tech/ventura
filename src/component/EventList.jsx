@@ -15,7 +15,7 @@ const EventList = ({events}) => {
     <IoIosArrowForward className="" />
     </div>    
     </div>
-    <div className="grid grid-cols-4 gap-4">
+    <div className="flex flex-row flex-wrap gap-4 ">
         {
             // Event List Data
             // eslint-disable-next-line react/prop-types
