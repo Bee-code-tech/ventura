@@ -1,8 +1,10 @@
 import EventCard from "./EventCard"
 import banner from '../assets/evt.avif'
+import { IoIosArrowForward } from "react-icons/io"
 
 const events = [
     { id: 1, image: banner, description: "Event 1 Description", price: 100, title:'Demo Event'  },
+    { id: 1, image: banner, description: "Event 1 Description", price: 100, title:'Demo Event' },
     { id: 1, image: banner, description: "Event 1 Description", price: 100, title:'Demo Event' },
     { id: 1, image: banner, description: "Event 1 Description", price: 100, title:'Demo Event' },
 
@@ -14,7 +16,13 @@ const events = [
 const EventList = () => {
   return (
     <>
-    <h1 className="text-2xl font-semibold text-gray-800 text-center mb-4 ">Upcoming Events</h1>
+    <div className="flex items-center justify-between mt-8 mb-4">
+    <h1 className="text-2xl font-md text-gray-800 text-center mb-4 ">Upcoming Events</h1>
+   <div className="flex  justify-center gap-2 items-baseline">
+    <h1 className="text-2xl font-md text-gray-800 text-center mb-4 ">see all</h1>
+    <IoIosArrowForward className="" />
+    </div>    
+    </div>
     <div className="flex w-full gap-8 overflow-x-auto">
         {
             // Event List Data

@@ -1,6 +1,6 @@
 // EventCard.js
 
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaRegIdBadge } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa6";
 
 // eslint-disable-next-line react/prop-types
@@ -24,7 +24,12 @@ const EventCard = ({ title, image, price }) => {
         </div>
         <div className=" text-sm flex items-center justify-start gap-2 -mt-6">
             <FaMoneyBill className="h-16 text-neutral-300" />
-          <span className="font-lg text-xl text-blue-500">${price}</span> 
+          <span className="font-lg text-xl text-black">${price}</span> 
+        </div>
+
+        <div className="flex w-full rounded-lg bg-neutral-800 p-3 items-center justify-center text-white gap-2">
+            <FaRegIdBadge className="text-white" />
+            Register
         </div>
        
 
