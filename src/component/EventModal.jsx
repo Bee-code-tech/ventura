@@ -72,7 +72,7 @@ const EventModal = ({ isOpen, onClose, addEvent }) => {
             <input 
               type="text" 
               value={description} 
-              onChange={(e) => setImage(e.target.value)} 
+              onChange={(e) => setDescription(e.target.value)} 
               className="w-full border rounded px-2 py-1"
               required
             />
