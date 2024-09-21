@@ -1,4 +1,5 @@
 import { CiGlobe } from "react-icons/ci"
+import { FaPlus } from "react-icons/fa"
 
 const Navbar = () => {
   return (
@@ -11,10 +12,15 @@ const Navbar = () => {
             .
         </div>
       </div>
-      <div className="">
+      <div className="flex gap-2 items-center justify-center">
+        
         <div className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2">
             <CiGlobe className="text-xl"/>
             Connect wallet
+        </div>
+        <div className="p-4 bg-black text-white rounded-md flex items-center justify-center gap-2">
+            <FaPlus className="text-xl"/>
+            Create Event
         </div>
       </div>
     </div>
